@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal a Hexadecimal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convertir Decimal a Hexadecimal</h1>
+    <p>Ingresa un número decimal para convertirlo:</p>
+    <input type="number" id="decimal" placeholder="Número decimal">
+    <button onclick="convertir()">Convertir</button>
+    <p id="resultado"></p>
+
+    <h1>Convertir Decimal a Binario</h1>
+    <p>Ingresa un número decimal para convertirlo:</p>
+    <input type="number" id="decimal2" placeholder="Número decimal">
+    <button onclick="convertirbin()">Convertir</button>
+    <p id="resultado2"></p>
+
+    <script>
+        function convertir() {
+            const decimal = parseInt(document.getElementById('decimal').value);
+            if (isNaN(decimal)) {
+                document.getElementById('resultado').innerText = "Por favor, ingresa un número válido.";
+            } else {
+                const hexadecimal = decimal.toString(16).toUpperCase();
+                document.getElementById('resultado').innerText = `El número hexadecimal es: ${hexadecimal}`;
+            }
+        }
+
+        function convertirbin() {
+            const decimal = parseInt(document.getElementById('decimal2').value);
+            if (isNaN(decimal)) {
+                document.getElementById('resultado2').innerText = "Por favor, ingresa un número válido.";
+            } else {
+                const binario = decimal.toString(2).toUpperCase();
+                document.getElementById('resultado2').innerText = `El número binario es: ${binario}`;
+            }
+        }
+    </script>
+</body>
+</html>
